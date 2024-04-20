@@ -1,7 +1,7 @@
 package receiptitem
 
 import (
-	utils "Fetch/TestingUtils"
+	utils "go-receipt-processor/TestingUtils"
 
 	"testing"
 )

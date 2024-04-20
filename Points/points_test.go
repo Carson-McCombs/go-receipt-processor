@@ -1,11 +1,11 @@
 package points
 
 import (
-	date "GoReceiptProcessor/Date"
-	receipt "GoReceiptProcessor/Receipt"
-	receiptitem "GoReceiptProcessor/Receipt/ReceiptItem"
-	utils "GoReceiptProcessor/TestingUtils"
-	time "GoReceiptProcessor/Time"
+	date "go-receipt-processor/Date"
+	receipt "go-receipt-processor/Receipt"
+	receiptitem "go-receipt-processor/Receipt/ReceiptItem"
+	utils "go-receipt-processor/TestingUtils"
+	time "go-receipt-processor/Time"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"

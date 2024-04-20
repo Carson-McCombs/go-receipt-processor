@@ -1,10 +1,10 @@
 package receipt
 
 import (
-	date "GoReceiptProcessor/Date"
-	receiptitem "GoReceiptProcessor/Receipt/ReceiptItem"
-	utils "GoReceiptProcessor/TestingUtils"
-	time "GoReceiptProcessor/Time"
+	date "go-receipt-processor/Date"
+	receiptitem "go-receipt-processor/Receipt/ReceiptItem"
+	utils "go-receipt-processor/TestingUtils"
+	time "go-receipt-processor/Time"
 	"strconv"
 	"testing"
 )

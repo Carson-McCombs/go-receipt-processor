@@ -1,9 +1,9 @@
 package receipt
 
 import (
-	date "GoReceiptProcessor/Date"
-	receiptitem "GoReceiptProcessor/Receipt/ReceiptItem"
-	time "GoReceiptProcessor/Time"
+	date "go-receipt-processor/Date"
+	receiptitem "go-receipt-processor/Receipt/ReceiptItem"
+	time "go-receipt-processor/Time"
 	"errors"
 	"fmt"
 	"strconv"

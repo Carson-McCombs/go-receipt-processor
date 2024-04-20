@@ -1,10 +1,10 @@
 package points
 
 import (
-	date "GoReceiptProcessor/Date"
-	receipt "GoReceiptProcessor/Receipt"
-	receiptitem "GoReceiptProcessor/Receipt/ReceiptItem"
-	time "GoReceiptProcessor/Time"
+	date "go-receipt-processor/Date"
+	receipt "go-receipt-processor/Receipt"
+	receiptitem "go-receipt-processor/Receipt/ReceiptItem"
+	time "go-receipt-processor/Time"
 	"math"
 	"regexp"
 	"strings"

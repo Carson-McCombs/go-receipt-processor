@@ -1,7 +1,7 @@
 package main
 
 import (
-	api "GoReceiptProcessor/API"
+	api "go-receipt-processor/API"
 	"net/http"
 )
 

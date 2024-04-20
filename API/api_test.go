@@ -1,8 +1,8 @@
 package api
 
 import (
-	receipt "GoReceiptProcessor/Receipt"
-	receiptitem "GoReceiptProcessor/Receipt/ReceiptItem"
+	receipt "go-receipt-processor/Receipt"
+	receiptitem "go-receipt-processor/Receipt/ReceiptItem"
 	"bytes"
 	"encoding/json"
 	"net/http"

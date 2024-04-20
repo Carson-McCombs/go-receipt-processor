@@ -1,4 +1,4 @@
-module GoReceiptProcessor
+module go-receipt-processor
 
 go 1.20
 

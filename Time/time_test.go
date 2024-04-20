@@ -1,7 +1,7 @@
 package time
 
 import (
-	utils "GoReceiptProcessor/TestingUtils"
+	utils "go-receipt-processor/TestingUtils"
 	"testing"
 )
 
