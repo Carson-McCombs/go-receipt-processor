@@ -1,0 +1,20 @@
+# syntax=docker/dockerfile:1
+# Hosts a local server on port 8080, written in Go 1.20, and packages into a container image.
+
+FROM golang:1.20
+
+WORKDIR /appw
+
+#Copies go.mod and go.sum, which holds references to all of the dependencies, into the application folder
+COPY go.mod go.sum ./
+
+#Downloads all the dependencies needed to run
+RUN go mod download
+
+#Copies the source code into the application folder
+COPY *.go ./
+
+RUN CGO_ENABLED=0 GOOS=windows go build -o /GoReceiptProcessor
+
+CMD ["/GoReceiptProcessor"]
+
