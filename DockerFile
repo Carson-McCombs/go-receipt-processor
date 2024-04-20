@@ -3,7 +3,7 @@
 
 FROM golang:1.20
 
-WORKDIR /appw
+WORKDIR /app
 
 #Copies go.mod and go.sum, which holds references to all of the dependencies, into the application folder
 COPY go.mod go.sum ./
@@ -12,9 +12,15 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 #Copies the source code into the application folder
-COPY *.go ./
+COPY . ./
 
-RUN CGO_ENABLED=0 GOOS=windows go build -o /GoReceiptProcessor
+#Builds the binaries
+RUN  CGO_ENABLED=0 go build  -o /go-receipt-processor .
 
-CMD ["/GoReceiptProcessor"]
+#Exposes what port the application communicates to Docker with
+EXPOSE 8080
+
+#Runs the executable
+CMD ["/go-receipt-processor"]
+
 
