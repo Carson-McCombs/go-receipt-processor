@@ -30,6 +30,6 @@ example data:
 
 if statuscode 200 - returns a json containings an id corresponding to this receipt.
 
-HTTP GET "http://0.0.0.0:8081/receipts/{id}
+HTTP GET "http://0.0.0.0:8081/receipts/{id}"
 
 if statuscode 200 - returns number of points the corresponding receipt is worth
