@@ -34,6 +34,10 @@ func (s *Server) routes() {
 	s.HandleFunc("/receipts/{id}", s.getReceiptPoints).Methods("GET")
 }
 
+type idResponse struct {
+	Id string `json:"id"`
+}
+
 func (s *Server) processReceipt(w http.ResponseWriter, r *http.Request) {
 	var unparsedReceipt receipt.UnparsedReceipt
 	err := json.NewDecoder(r.Body).Decode(&unparsedReceipt)
@@ -46,7 +50,9 @@ func (s *Server) processReceipt(w http.ResponseWriter, r *http.Request) {
 	points := points.CalculatePoints(receipt)
 	s.receiptMap[id] = receipt
 	s.pointsMap[id] = points
-	err = json.NewEncoder(w).Encode(receipt.Id)
+	idOutput := idResponse{Id: id}
+	w.Header().Set("Content-Type", "application/json")
+	err = json.NewEncoder(w).Encode(idOutput)
 	if err != nil {
 		http.Error(w, "The receipt is invalid", http.StatusBadRequest)
 		return

@@ -65,7 +65,7 @@ func TestServer(t *testing.T) {
 		body := bytes.NewReader(unparsedReceiptJson)
 		r, _ := http.NewRequest("POST", url+"process", body)
 		server.Router.ServeHTTP(w, r)
-		var id string
+		var id idResponse
 
 		switch statusCode := w.Result().StatusCode; statusCode {
 		case 200:
@@ -78,7 +78,7 @@ func TestServer(t *testing.T) {
 
 		w = httptest.NewRecorder()
 
-		r, _ = http.NewRequest("GET", url+id, body)
+		r, _ = http.NewRequest("GET", url+id.Id, body)
 		server.Router.ServeHTTP(w, r)
 
 		statusCode := w.Result().StatusCode
@@ -91,8 +91,6 @@ func TestServer(t *testing.T) {
 		default:
 			t.Fatalf("test server:\n    expected status code: \"%d\"\n    actual status code: \"%d\"\n", testCase.expectedStatusCodeA, statusCode)
 		}
-
-		//json.Unmarshal(w.Body.Bytes(), &points)
 		if points.Points != int64(testCase.expectedPoints) {
 			t.Fatalf("    expected: %d\n    got: %d\n", testCase.expectedPoints, points.Points)
 		}
